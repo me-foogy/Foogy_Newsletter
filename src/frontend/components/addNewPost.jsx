@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 
 
 export default function AddNewPost(){
+    const url = import.meta.env.VITE_SERVER_URL; 
     const navigate=useNavigate();
 
     const [formDetails, setFormDetails] = useState({
@@ -34,7 +35,6 @@ export default function AddNewPost(){
 
     async function handleSubmit (e){
         e.preventDefault();
-        const url="http://localhost:5000";
         try{
             const res= await axios.post(`${url}/posts`,formDetails)
             console.log("Data added successfully",res.data);
@@ -49,16 +49,16 @@ export default function AddNewPost(){
 
     return(
         <>
-        <button onClick={()=>navigate("/")} className='mx-(--m-side) mt-5 border rounded-3xl px-3 py-2 cursor-pointer hover:border-[var(--hover-color)] hover:text-[var(--hover-color)]'>GO BACK</button>
-        <form onSubmit={handleSubmit} className="mx-[var(--m-side)] my-10 flex flex-col">
+        <button onClick={()=>navigate("/")} className='mx-10 lg:mx-(--m-side) mt-5 border rounded-3xl px-3 py-2 cursor-pointer hover:border-[var(--hover-color)] hover:text-[var(--hover-color)]'>GO BACK</button>
+        <form onSubmit={handleSubmit} className=" mx-10 lg:mx-[var(--m-side)] my-10 flex flex-col">
 
-            <label className="block font-anonymous my-3 font-bold">Enter Headline</label>
+            <label className="block font-anonymous lg:my-3 font-bold">Enter Headline</label>
             <input type="text" name='title' value={formDetails.heading} onChange={handleChange} placeholder="Blog Title" required
               className="border rounded-md w-full px-4 py-2"/>
 
 
             <label className='block font-anonymous my-3 font-bold'>Select Genre</label>
-            <div className='flex gap-4 flex-row justify-evenly'>
+            <div className='flex gap-4 flex-col lg:flex-row lg:justify-evenly'>
             {genreOptions.map(eachGenre=>{
                 return (<label className="flex items-center gap-2 cursor-pointer">
                 <input
@@ -83,7 +83,7 @@ export default function AddNewPost(){
 
             <div className='flex justify-end items-end'>
                 <p className='text-red-500 font-anonymous font-bold pr-10'>*This action is permanent and article once published cannot be deleted</p>
-                <button type='submit' className='border rounded-3xl px-3 mt-10 align-right py-2 hover:cursor-pointer hover:border-[var(--hover-color)] hover:text-[var(--hover-color)] w-50'>ADD ARTICLE</button>
+                <button type='submit' className='border rounded-3xl px-5 lg:px-3 mt-10 align-right py-2 hover:cursor-pointer hover:border-[var(--hover-color)] hover:text-[var(--hover-color)] w-50'>ADD ARTICLE</button>
             </div>
             
         </form>

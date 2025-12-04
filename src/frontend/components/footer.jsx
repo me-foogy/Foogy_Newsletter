@@ -6,7 +6,7 @@ const navigate=useNavigate();
     return(
         <footer>
             <hr className="bg-black border-2 mt-9"/>
-            <div className="flex flex-row justify-between mx-[var(--m-side)] my-3">
+            <div className="flex flex-row justify-between mx-10 lg:mx-[var(--m-side)] my-3">
                 <div>
                     <p>THANK YOU FOR READING</p>
                     <p>FOOGY.CO</p>
