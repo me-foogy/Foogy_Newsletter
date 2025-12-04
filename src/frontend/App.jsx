@@ -1,14 +1,29 @@
 import{BrowserRouter, Routes, Route} from "react-router-dom"
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/header';
 import Articles from './components/articles';
 import Footer from './components/footer';
 import AddNewPost from './components/addNewPost';
 import ReadMore from './components/readMore';
-export default function App(){
+import { useEffect } from "react";
 
-    const url="http://localhost:5000";
+export default function App(){
+    useEffect(()=> {
+        toast.info("This site may take some time to load due to the server cold start",
+            {
+                position: "top-center",
+                hideProgressBar: true,
+                style:{
+                    background: "#ffffff",
+                    border: "2px solid #000000",
+                    borderRadius: "16px",
+                    padding: "10px 10px",
+                    fontSize: "16px"
+                }
+            }
+        )
+    },[])
 
     return(
         <BrowserRouter> 

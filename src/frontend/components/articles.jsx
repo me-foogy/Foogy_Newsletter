@@ -85,6 +85,9 @@ function EachArticle(props){
     let genreSection = props.genre.map(genre=>{
                 return <h6 className="border px-2 rounded-2xl mr-[10px]">{genre}</h6>
             })
+    
+    const truncatedBody = props.body.split("").slice(0,200).join("");
+    const frontRender = (truncatedBody.length===200)? truncatedBody+"...":truncatedBody;  
 
     return(
         <>
@@ -92,19 +95,19 @@ function EachArticle(props){
             {/* section for genre */}
             <div className="flex flex-row">{genreSection}</div>
             <h1 className="mt-5 text-4xl">{props.title}</h1>
-            <p className="whitespace-pre-wrap mt-2 text-justify">{props.body.split("").slice(0,200).join("")+" ..."}</p>
+            <p className="whitespace-pre-wrap mt-2 text-justify">{frontRender}</p>
             <div className="flex flex-row justify-between mt-5">
                 <div>
                 <p className='mb-1'>Author : {props.author}</p>
                 <p>{props.date.split("").splice(0,10).join("")} | {props.views} Views</p>
                 </div>
-                <button className="border px-4 py-2 rounded-3xl cursor-pointer hover:border-[var(--hover-color)] hover:text-[var(--hover-color)]"
+                {truncatedBody.length===200&&<button className="border px-4 py-2 rounded-3xl cursor-pointer hover:border-[var(--hover-color)] hover:text-[var(--hover-color)]"
                  onClick={()=>{
                     console.log(props._id);
                     updateViews(props._id);
                     navigation('/readMore', {state:props});
                     return;
-                }}>Read More</button>
+                }}>Read More</button>}
             </div>
 
         </article>

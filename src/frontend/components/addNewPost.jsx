@@ -39,7 +39,20 @@ export default function AddNewPost(){
             const res= await axios.post(`${url}/posts`,formDetails)
             console.log("Data added successfully",res.data);
             navigate("/");
-            toast.success("The article has been published");
+            toast.success(
+                "The article has been published",
+                {
+                    position: "top-right",
+                    hideProgressBar: true,
+                    style:{
+                        background: "#ffffff",
+                        border: "2px solid #000000",
+                        borderRadius: "16px",
+                        padding: "10px 10px",
+                        fontSize: "16px"
+                    }
+                }
+            );
         }
         catch(err){
             console.error("Error has occured while adding the post:",err);
