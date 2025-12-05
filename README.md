@@ -1,16 +1,31 @@
-# React + Vite
+# Foogy Newsletter Project
+A newsletter project in which any user can add and view articles belonging to different type of genre
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tech Stack Used (MERN STACK)
+- ReactJS
+- NodeJS
+- ExpressJS
+- MongoDB
 
-Currently, two official plugins are available:
+## Production
+- Render - Hosts NodeJS backend
+- Vercel - Hosts ReactJS frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+***
+## Live Link
+https://foogynewslettervercel.vercel.app/
+***
 
-## React Compiler
+## ScreenShots - View Article
+<img width="1916" height="868" alt="image" src="https://github.com/user-attachments/assets/6d7384da-3643-4328-84da-f58afebc8506" />
+___
+<img width="1893" height="867" alt="image" src="https://github.com/user-attachments/assets/6351c362-24f5-479a-b6eb-cd22aed3d60a" />
+___
+<img width="1892" height="868" alt="image" src="https://github.com/user-attachments/assets/4ef8c318-8dca-4878-84c3-2059d37d89a0" />
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+___
+## ScreenShots - Add Article
+<img width="1877" height="868" alt="image" src="https://github.com/user-attachments/assets/9d19b85d-cf75-42e3-8618-29bb858cf35f" />
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
